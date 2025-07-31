@@ -188,7 +188,7 @@ export default function FeaturesSection() {
           animate={isInView ? "visible" : "hidden"}
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <motion.div
               key={feature.title}
               variants={itemVariants}

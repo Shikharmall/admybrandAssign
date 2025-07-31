@@ -301,11 +301,11 @@ export default function TestimonialsCarousel() {
                       transition={{ duration: 0.6, delay: 0.5 }}
                       className="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium"
                     >
-                      "{currentTestimonial.content.replace(currentTestimonial.highlight, "")}"
+                      {currentTestimonial.content.replace(currentTestimonial.highlight, "")}
                       <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-semibold">
                         {currentTestimonial.highlight}
                       </span>
-                      "
+                      
                     </motion.blockquote>
 
                     {/* Author Info */}

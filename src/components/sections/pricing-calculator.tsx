@@ -421,7 +421,7 @@ export default function PricingCalculator() {
 
                 {/* Plan Features */}
                 <div className="mb-8">
-                  <h4 className="font-semibold text-slate-900 mb-4">What's included:</h4>
+                  <h4 className="font-semibold text-slate-900 mb-4">What&apos;s included:</h4>
                   <ul className="space-y-2">
                     {currentTier.features.map((feature, index) => (
                       <motion.li

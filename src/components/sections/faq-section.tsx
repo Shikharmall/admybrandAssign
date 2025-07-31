@@ -173,7 +173,7 @@ export default function FAQSection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
             Got questions?
             <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-              We've got answers
+              We&apos;ve got answers
             </span>
           </h2>
 
@@ -315,7 +315,7 @@ export default function FAQSection() {
 
               <h3 className="text-3xl font-bold text-slate-900 mb-4">Still have questions?</h3>
               <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                Can't find what you're looking for? Our support team is here to help you get the answers you need.
+                Can&apos;t find what you&apos;re looking for? Our support team is here to help you get the answers you need.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
