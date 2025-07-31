@@ -102,12 +102,17 @@ const pricingPlans = [
     },
 ]
 
-const featureCategories = [
+type FeatureCategoryKey = keyof typeof pricingPlans[0]['features']
+
+const featureCategories: {
+    key: FeatureCategoryKey
+    name: string
+    icon: React.ComponentType<{ className?: string }>
+}[] = [
     { key: "core", name: "Core Features", icon: Zap },
     { key: "advanced", name: "Advanced Features", icon: Star },
     { key: "enterprise", name: "Enterprise Features", icon: Crown },
 ]
-
 export default function PricingSection() {
     const [isYearly, setIsYearly] = useState(false)
     const ref = useRef(null)
