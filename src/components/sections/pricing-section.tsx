@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion"
 import { Check, X, Star, Zap, Crown, ArrowRight, Sparkles } from "lucide-react"
 import { useRef, useState } from "react"
-import { Button } from "@/components/ui/buttonn"
+import { Button } from "@/components/ui/Button"
 import React from "react"
 
 const pricingPlans = [
@@ -131,7 +131,8 @@ export default function PricingSection() {
             y: 0,
             transition: {
                 duration: 0.8,
-                ease: "easeOut",
+                //ease: "easeOut",
+                ease: "easeOut" as const
             },
         },
     }
@@ -444,47 +445,7 @@ export default function PricingSection() {
                         </div>
                     </div>
                 </motion.div>
-
-                {/* Bottom CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                    transition={{ duration: 0.8, delay: 1.2 }}
-                    className="text-center mt-16"
-                >
-                    <div className="bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-blue-600/10 backdrop-blur-xl rounded-3xl border border-white/50 p-12 shadow-2xl">
-                        <h3 className="text-3xl font-bold text-slate-900 mb-4">Still have questions?</h3>
-                        <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                            Our team is here to help you choose the perfect plan for your needs.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                transition={{ type: "spring", stiffness: 300 }}
-                            >
-                                <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg border-0">
-                                    Contact Sales
-                                    <ArrowRight className="ml-2 h-4 w-4" />
-                                </Button>
-                            </motion.div>
-
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                transition={{ type: "spring", stiffness: 300 }}
-                            >
-                                <Button
-                                    variant="outline"
-                                    className="border-2 border-slate-300 hover:border-purple-300 hover:bg-purple-50 px-8 py-3 rounded-full font-semibold bg-white/80 backdrop-blur-sm"
-                                >
-                                    View FAQ
-                                </Button>
-                            </motion.div>
-                        </div>
-                    </div>
-                </motion.div>
+                
             </div>
         </section>
     )

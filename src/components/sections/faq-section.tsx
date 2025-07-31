@@ -3,7 +3,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion"
 import { Plus, Minus, HelpCircle, Sparkles, MessageCircle, Mail, Phone } from "lucide-react"
 import { useRef, useState } from "react"
-import { Button } from "@/components/ui/buttonn"
+import { Button } from "@/components/ui/Button"
 
 const faqData = [
   {

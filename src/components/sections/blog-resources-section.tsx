@@ -18,7 +18,7 @@ import {
   Users,
 } from "lucide-react"
 import { useRef, useState } from "react"
-import { Button } from "@/components/ui/buttonn"
+import { Button } from "@/components/ui/Button"
 import Image from "next/image"
 
 const categories = [
@@ -43,11 +43,11 @@ const featuredArticles = [
     excerpt:
       "Learn how to design and implement scalable applications that can handle millions of users while maintaining performance and reliability.",
     author: "Sarah Chen",
-    authorAvatar: "/placeholder.svg?height=40&width=40&text=SC",
+    authorAvatar: "/img2.jpg",
     date: "2024-01-15",
     readTime: "8 min read",
     category: "Best Practices",
-    image: "/placeholder.svg?height=300&width=500&text=Scalable+Architecture",
+    image: "/img1.jpg",
     type: "article",
     featured: true,
     tags: ["Architecture", "Scalability", "Performance"],
@@ -58,11 +58,11 @@ const featuredArticles = [
     excerpt:
       "Master the art of API integration with this comprehensive guide covering authentication, error handling, and best practices.",
     author: "Marcus Rodriguez",
-    authorAvatar: "/placeholder.svg?height=40&width=40&text=MR",
+    authorAvatar: "/img2.jpg",
     date: "2024-01-12",
     readTime: "12 min read",
     category: "Tutorials",
-    image: "/placeholder.svg?height=300&width=500&text=API+Integration",
+    image: "/img1.jpg",
     type: "article",
     featured: true,
     tags: ["API", "Integration", "Development"],
@@ -73,11 +73,11 @@ const featuredArticles = [
     excerpt:
       "Discover proven strategies to boost your team's productivity and collaboration in remote and hybrid work environments.",
     author: "Emily Watson",
-    authorAvatar: "/placeholder.svg?height=40&width=40&text=EW",
+    authorAvatar: "/img2.jpg",
     date: "2024-01-10",
     readTime: "45 min",
     category: "Team Management",
-    image: "/placeholder.svg?height=300&width=500&text=Team+Productivity",
+    image: "/img1.jpg",
     type: "video",
     featured: true,
     tags: ["Productivity", "Team", "Management"],
@@ -91,11 +91,11 @@ const recentArticles = [
     excerpt:
       "Essential security measures every developer should implement to protect their applications and user data.",
     author: "David Kim",
-    authorAvatar: "/placeholder.svg?height=40&width=40&text=DK",
+    authorAvatar: "/img2.jpg",
     date: "2024-01-08",
     readTime: "6 min read",
     category: "Best Practices",
-    image: "/placeholder.svg?height=200&width=300&text=Security",
+    image: "/img1.jpg",
     type: "article",
     featured: false,
     tags: ["Security", "Development"],
@@ -105,11 +105,11 @@ const recentArticles = [
     title: "Optimizing Database Performance",
     excerpt: "Learn advanced techniques to optimize your database queries and improve application performance.",
     author: "Lisa Thompson",
-    authorAvatar: "/placeholder.svg?height=40&width=40&text=LT",
+    authorAvatar: "/img2.jpg",
     date: "2024-01-05",
     readTime: "10 min read",
     category: "Tutorials",
-    image: "/placeholder.svg?height=200&width=300&text=Database",
+    image: "/img1.jpg",
     type: "article",
     featured: false,
     tags: ["Database", "Performance"],
@@ -119,11 +119,11 @@ const recentArticles = [
     title: "The Future of Web Development",
     excerpt: "Explore emerging trends and technologies that will shape the future of web development.",
     author: "Alex Johnson",
-    authorAvatar: "/placeholder.svg?height=40&width=40&text=AJ",
+    authorAvatar: "/img2.jpg",
     date: "2024-01-03",
     readTime: "30 min",
     category: "Case Studies",
-    image: "/placeholder.svg?height=200&width=300&text=Future+Web",
+    image: "/img1.jpg",
     type: "podcast",
     featured: false,
     tags: ["Trends", "Future", "Web Development"],
@@ -133,11 +133,11 @@ const recentArticles = [
     title: "Microservices Architecture Guide",
     excerpt: "A comprehensive guide to implementing microservices architecture in your applications.",
     author: "Sarah Chen",
-    authorAvatar: "/placeholder.svg?height=40&width=40&text=SC",
+    authorAvatar: "/img2.jpg",
     date: "2024-01-01",
     readTime: "15 min read",
     category: "Tutorials",
-    image: "/placeholder.svg?height=200&width=300&text=Microservices",
+    image: "/img1.jpg",
     type: "article",
     featured: false,
     tags: ["Microservices", "Architecture"],
@@ -147,11 +147,11 @@ const recentArticles = [
     title: "DevOps Automation Strategies",
     excerpt: "Streamline your development workflow with these proven DevOps automation strategies.",
     author: "Marcus Rodriguez",
-    authorAvatar: "/placeholder.svg?height=40&width=40&text=MR",
+    authorAvatar: "/img2.jpg",
     date: "2023-12-28",
     readTime: "25 min",
     category: "Best Practices",
-    image: "/placeholder.svg?height=200&width=300&text=DevOps",
+    image: "/img1.jpg",
     type: "video",
     featured: false,
     tags: ["DevOps", "Automation"],
@@ -161,11 +161,11 @@ const recentArticles = [
     title: "Building High-Performance Teams",
     excerpt: "Learn how to build and manage high-performance development teams that deliver exceptional results.",
     author: "Emily Watson",
-    authorAvatar: "/placeholder.svg?height=40&width=40&text=EW",
+    authorAvatar: "/img2.jpg",
     date: "2023-12-25",
     readTime: "8 min read",
     category: "Team Management",
-    image: "/placeholder.svg?height=200&width=300&text=High+Performance",
+    image: "/img1.jpg",
     type: "article",
     featured: false,
     tags: ["Team", "Performance", "Management"],
@@ -561,42 +561,7 @@ export default function BlogResourcesSection() {
             </motion.div>
           )}
         </motion.div>
-
-        {/* Newsletter Signup */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-20"
-        >
-          <div className="bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-blue-600/10 backdrop-blur-xl rounded-3xl border border-white/50 p-12 shadow-2xl text-center">
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl mb-6 shadow-lg"
-            >
-              <BookOpen className="h-8 w-8 text-white" />
-            </motion.div>
-
-            <h3 className="text-3xl font-bold text-slate-900 mb-4">Stay Updated</h3>
-            <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-              Get the latest articles, tutorials, and resources delivered to your inbox every week.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              />
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg border-0 whitespace-nowrap">
-                  Subscribe
-                </Button>
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   )

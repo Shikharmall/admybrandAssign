@@ -1,8 +1,9 @@
 "use client"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/buttonn"
+// import { Button } from "@/components/ui/Button"
 import { Play, ArrowRight } from "lucide-react"
 import Image from "next/image"
+import { Button } from "../ui/Button"
 
 export default function HeroSection() {
   return (
@@ -37,7 +38,8 @@ export default function HeroSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-600"
+                  className="block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"
+                  // className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-600"
                 >
                   one line at a time
                 </motion.span>

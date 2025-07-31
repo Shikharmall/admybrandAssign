@@ -1,392 +1,354 @@
 "use client"
 
-import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Github, Mail, Phone, MapPin, ArrowRight, Heart } from "lucide-react"
 import { motion } from "framer-motion"
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Github,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+  ArrowRight,
+  Heart,
+  Sparkles,
+} from "lucide-react"
+import { Button } from "@/components/ui/Button"
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  },
-}
-
-const linkVariants = {
-  hover: {
-    scale: 1.05,
-    x: 5,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
-    },
-  },
-}
-
-const socialIconVariants = {
-  hover: {
-    scale: 1.3,
-    rotate: 10,
-    y: -5,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-  tap: {
-    scale: 0.9,
-  },
-}
-
-const contactItemVariants = {
-  hover: {
-    x: 8,
-    scale: 1.02,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
-    },
-  },
-}
-
-const glowVariants = {
-  animate: {
-    boxShadow: [
-      "0 0 20px rgba(59, 130, 246, 0.3)",
-      "0 0 30px rgba(59, 130, 246, 0.5)",
-      "0 0 20px rgba(59, 130, 246, 0.3)",
+const footerLinks = {
+  product: {
+    title: "Product",
+    links: [
+      { name: "Features", href: "#features" },
+      { name: "Pricing", href: "#pricing" },
+      { name: "API Documentation", href: "/docs" },
+      { name: "Integrations", href: "/integrations" },
+      { name: "Changelog", href: "/changelog" },
+      { name: "Roadmap", href: "/roadmap" },
     ],
-    transition: {
-      duration: 2,
-      repeat: Number.POSITIVE_INFINITY,
-      ease: "easeInOut",
-    },
+  },
+  company: {
+    title: "Company",
+    links: [
+      { name: "About Us", href: "/about" },
+      { name: "Careers", href: "/careers" },
+      { name: "Press Kit", href: "/press" },
+      { name: "Blog", href: "/blog" },
+      { name: "Partners", href: "/partners" },
+      { name: "Investors", href: "/investors" },
+    ],
+  },
+  resources: {
+    title: "Resources",
+    links: [
+      { name: "Help Center", href: "/help" },
+      { name: "Community", href: "/community" },
+      { name: "Tutorials", href: "/tutorials" },
+      { name: "Webinars", href: "/webinars" },
+      { name: "Case Studies", href: "/case-studies" },
+      { name: "Templates", href: "/templates" },
+    ],
+  },
+  legal: {
+    title: "Legal",
+    links: [
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Terms of Service", href: "/terms" },
+      { name: "Cookie Policy", href: "/cookies" },
+      { name: "GDPR", href: "/gdpr" },
+      { name: "Security", href: "/security" },
+      { name: "Compliance", href: "/compliance" },
+    ],
   },
 }
+
+const socialLinks = [
+  { name: "Twitter", icon: Twitter, href: "https://twitter.com", color: "hover:text-blue-400" },
+  { name: "Facebook", icon: Facebook, href: "https://facebook.com", color: "hover:text-blue-600" },
+  { name: "Instagram", icon: Instagram, href: "https://instagram.com", color: "hover:text-pink-500" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com", color: "hover:text-blue-700" },
+  { name: "GitHub", icon: Github, href: "https://github.com", color: "hover:text-gray-900" },
+  { name: "YouTube", icon: Youtube, href: "https://youtube.com", color: "hover:text-red-500" },
+]
 
 export default function Footer() {
   return (
-    <motion.footer
-      className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={containerVariants}
-    >
+    <footer className="relative bg-gradient-to-b from-slate-50 to-slate-100 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
-
-      {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
-            backgroundSize: "20px 20px",
+      <div className="absolute inset-0">
+        <motion.div
+          animate={{
+            x: [0, -50, 0],
+            y: [0, 30, 0],
+            scale: [1, 1.1, 1],
           }}
+          transition={{
+            duration: 25,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          }}
+          className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-r from-purple-400/5 to-pink-400/5 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, 60, 0],
+            y: [0, -40, 0],
+            scale: [1.1, 1, 1.1],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          }}
+          className="absolute bottom-40 left-20 w-80 h-80 bg-gradient-to-r from-blue-400/5 to-cyan-400/5 rounded-full blur-3xl"
         />
       </div>
 
-      <div className="relative container mx-auto px-6 py-16">
-        {/* Header Section */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
-            Stay Connected
-          </motion.h2>
-          <motion.p className="text-slate-300 text-lg max-w-2xl mx-auto" variants={itemVariants}>
-            Join our community and never miss an update. Follow us on social media and get in touch!
-          </motion.p>
-        </motion.div>
-
-        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16" variants={containerVariants}>
-          {/* Company Info */}
+      {/* Newsletter Section */}
+      <div className="relative z-10 border-b border-slate-200/50">
+        <div className="container px-4 md:px-6 py-16">
           <motion.div
-            className="space-y-6 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500"
-            variants={itemVariants}
-            whileHover={{ y: -5, scale: 1.02 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
           >
-            <motion.div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
-                <div className="w-4 h-4 bg-white rounded-sm" />
-              </div>
-              <h3 className="text-xl font-bold">Company</h3>
-            </motion.div>
-            <ul className="space-y-3">
-              {[
-                { href: "/about", text: "About Us" },
-                { href: "/careers", text: "Careers" },
-                { href: "/press", text: "Press" },
-                { href: "/blog", text: "Blog" },
-              ].map((link, index) => (
-                <motion.li key={link.href} variants={itemVariants}>
-                  <motion.div variants={linkVariants} whileHover="hover">
-                    <Link
-                      href={link.href}
-                      className="text-slate-300 hover:text-white transition-colors flex items-center group"
-                    >
-                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.text}
-                    </Link>
-                  </motion.div>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Products & Services */}
-          <motion.div
-            className="space-y-6 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500"
-            variants={itemVariants}
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <motion.div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <div className="w-4 h-4 bg-white rounded-sm" />
-              </div>
-              <h3 className="text-xl font-bold">Products</h3>
-            </motion.div>
-            <ul className="space-y-3">
-              {[
-                { href: "/products", text: "All Products" },
-                { href: "/pricing", text: "Pricing" },
-                { href: "/enterprise", text: "Enterprise" },
-                { href: "/api", text: "API" },
-              ].map((link, index) => (
-                <motion.li key={link.href} variants={itemVariants}>
-                  <motion.div variants={linkVariants} whileHover="hover">
-                    <Link
-                      href={link.href}
-                      className="text-slate-300 hover:text-white transition-colors flex items-center group"
-                    >
-                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.text}
-                    </Link>
-                  </motion.div>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Support & Resources */}
-          <motion.div
-            className="space-y-6 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500"
-            variants={itemVariants}
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <motion.div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-red-500 rounded-lg flex items-center justify-center">
-                <div className="w-4 h-4 bg-white rounded-sm" />
-              </div>
-              <h3 className="text-xl font-bold">Support</h3>
-            </motion.div>
-            <ul className="space-y-3">
-              {[
-                { href: "/help", text: "Help Center" },
-                { href: "/docs", text: "Documentation" },
-                { href: "/community", text: "Community" },
-                { href: "/contact", text: "Contact Support" },
-              ].map((link, index) => (
-                <motion.li key={link.href} variants={itemVariants}>
-                  <motion.div variants={linkVariants} whileHover="hover">
-                    <Link
-                      href={link.href}
-                      className="text-slate-300 hover:text-white transition-colors flex items-center group"
-                    >
-                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.text}
-                    </Link>
-                  </motion.div>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact Info & Social */}
-          <motion.div
-            className="space-y-6 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500"
-            variants={itemVariants}
-            whileHover={{ y: -5, scale: 1.02 }}
-          >
-            <motion.div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
-                <div className="w-4 h-4 bg-white rounded-sm" />
-              </div>
-              <h3 className="text-xl font-bold">Contact</h3>
-            </motion.div>
-
-            <div className="space-y-4">
-              {[
-                { icon: Mail, text: "hello@company.com", color: "from-blue-400 to-blue-600" },
-                { icon: Phone, text: "+1 (555) 123-4567", color: "from-green-400 to-green-600" },
-                { icon: MapPin, text: "123 Business St, City, ST 12345", color: "from-purple-400 to-purple-600" },
-              ].map((contact, index) => {
-                const IconComponent = contact.icon
-                return (
-                  <motion.div
-                    key={index}
-                    className="flex items-center space-x-3 text-slate-300 cursor-pointer group"
-                    variants={contactItemVariants}
-                    whileHover="hover"
-                  >
-                    <motion.div
-                      className={`w-10 h-10 bg-gradient-to-r ${contact.color} rounded-xl flex items-center justify-center group-hover:shadow-lg transition-all duration-300`}
-                      whileHover={{ rotate: 10, scale: 1.1 }}
-                    >
-                      <IconComponent className="h-5 w-5 text-white" />
-                    </motion.div>
-                    <span className="group-hover:text-white transition-colors">{contact.text}</span>
-                  </motion.div>
-                )
-              })}
-            </div>
-
-            {/* Social Media */}
-            <motion.div className="pt-6 border-t border-white/10" variants={itemVariants}>
-              <motion.h4
-                className="text-lg font-semibold mb-4 text-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+            <div className="bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-blue-600/10 backdrop-blur-xl rounded-3xl border border-white/50 p-12 shadow-2xl">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 rounded-full border border-purple-200/50 bg-gradient-to-r from-purple-50/80 to-pink-50/80 backdrop-blur-sm px-4 py-2 text-sm mb-6 shadow-lg"
               >
-                Follow Us
-              </motion.h4>
-              <motion.div className="flex justify-center space-x-4" variants={containerVariants}>
-                {[
-                  {
-                    href: "https://facebook.com",
-                    icon: Facebook,
-                    label: "Facebook",
-                    color: "from-blue-600 to-blue-700",
-                  },
-                  { href: "https://twitter.com", icon: Twitter, label: "Twitter", color: "from-sky-500 to-sky-600" },
-                  {
-                    href: "https://instagram.com",
-                    icon: Instagram,
-                    label: "Instagram",
-                    color: "from-pink-500 to-purple-600",
-                  },
-                  {
-                    href: "https://linkedin.com",
-                    icon: Linkedin,
-                    label: "LinkedIn",
-                    color: "from-blue-700 to-blue-800",
-                  },
-                  { href: "https://github.com", icon: Github, label: "GitHub", color: "from-gray-700 to-gray-800" },
-                ].map((social, index) => {
-                  const IconComponent = social.icon
-                  return (
-                    <motion.div key={social.href} variants={itemVariants}>
-                      <motion.div variants={socialIconVariants} whileHover="hover" whileTap="tap" className="relative">
-                        <Link
-                          href={social.href}
-                          className={`w-12 h-12 bg-gradient-to-r ${social.color} rounded-xl flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group`}
-                          aria-label={social.label}
-                        >
-                          <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          <IconComponent className="h-6 w-6 relative z-10" />
-                        </Link>
-                      </motion.div>
-                    </motion.div>
-                  )
-                })}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                >
+                  <Sparkles className="h-4 w-4 text-purple-600" />
+                </motion.div>
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-semibold">
+                  Stay Updated
+                </span>
               </motion.div>
-            </motion.div>
-          </motion.div>
-        </motion.div>
 
-        {/* Newsletter Section */}
-        <motion.div
-          className="mb-16 p-8 rounded-3xl bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-white/20"
-          variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
-        >
-          <div className="text-center max-w-2xl mx-auto">
-            <motion.h3 className="text-2xl font-bold mb-4" whileHover={{ scale: 1.05 }}>
-              Subscribe to Our Newsletter
-            </motion.h3>
-            <motion.p className="text-slate-300 mb-6" variants={itemVariants}>
-              Get the latest updates, exclusive content, and special offers delivered straight to your inbox.
-            </motion.p>
-            <motion.div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" variants={containerVariants}>
-              <motion.input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                variants={itemVariants}
-                whileFocus={{ scale: 1.02 }}
-              />
-              <motion.button
-                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                variants={glowVariants}
-                animate="animate"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Get the latest updates
+                <span className="block bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  delivered to your inbox
+                </span>
+              </h3>
+
+              <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                Join 50,000+ developers who receive our weekly newsletter with product updates, industry insights, and
+                exclusive content.
+              </p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
               >
-                Subscribe
-              </motion.button>
-            </motion.div>
-          </div>
-        </motion.div>
+                <div className="flex-1">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="w-full px-6 py-4 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-slate-900 placeholder-slate-500"
+                  />
+                </div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg border-0 whitespace-nowrap">
+                    Subscribe
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </motion.div>
+              </motion.div>
 
-        {/* Bottom Section */}
-        <motion.div className="pt-8 border-t border-white/20" variants={itemVariants}>
-          <motion.div
-            className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
-            variants={containerVariants}
-          >
+              <p className="text-sm text-slate-500 mt-4">
+                No spam, unsubscribe at any time. Read our{" "}
+                <a href="#" className="text-purple-600 hover:text-purple-700 underline">
+                  Privacy Policy
+                </a>
+                .
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="relative z-10">
+        <div className="container px-4 md:px-6 py-16">
+          <div className="grid gap-12 lg:grid-cols-5">
+            {/* Company Info */}
             <motion.div
-              className="text-slate-400 flex items-center space-x-2"
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="lg:col-span-2"
             >
-              <span>© {new Date().getFullYear()} Company Name. Made with</span>
+              <div className="mb-8">
+                <motion.div whileHover={{ scale: 1.05 }} className="inline-flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                    <Sparkles className="h-6 w-6 text-white" />
+                  </div>
+                  <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    ADmybrand
+                  </span>
+                </motion.div>
+
+                <p className="text-slate-600 text-lg leading-relaxed mb-8 max-w-md">
+                  Empowering developers worldwide to build the future. Transform your ideas into reality with our
+                  cutting-edge platform.
+                </p>
+
+                {/* Contact Info */}
+                <div className="space-y-4">
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-3 text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
+                  >
+                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                      <Mail className="h-4 w-4 text-white" />
+                    </div>
+                    <span>hello@yourbrand.com</span>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-3 text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
+                  >
+                    <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
+                      <Phone className="h-4 w-4 text-white" />
+                    </div>
+                    <span>+1 (555) 123-4567</span>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-3 text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
+                  >
+                    <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                      <MapPin className="h-4 w-4 text-white" />
+                    </div>
+                    <span>San Francisco, CA</span>
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div>
+                <h4 className="font-semibold text-slate-900 mb-4">Follow Us</h4>
+                <div className="flex gap-3">
+                  {socialLinks.map((social, index) => (
+                    <motion.a
+                      key={social.name}
+                      href={social.href}
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      viewport={{ once: true }}
+                      className={`w-12 h-12 bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 ${social.color} transition-all duration-300 shadow-lg hover:shadow-xl`}
+                    >
+                      <social.icon className="h-5 w-5" />
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Footer Links */}
+            {Object.entries(footerLinks).map(([key, section], sectionIndex) => (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: sectionIndex * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h4 className="font-semibold text-slate-900 mb-6">{section.title}</h4>
+                <ul className="space-y-3">
+                  {section.links.map((link, linkIndex) => (
+                    <motion.li
+                      key={link.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: sectionIndex * 0.1 + linkIndex * 0.05 }}
+                      viewport={{ once: true }}
+                    >
+                      <motion.a
+                        href={link.href}
+                        whileHover={{ x: 5 }}
+                        className="text-slate-600 hover:text-purple-600 transition-colors duration-300 block"
+                      >
+                        {link.name}
+                      </motion.a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="relative z-10 border-t border-slate-200/50">
+        <div className="container px-4 md:px-6 py-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center justify-between gap-6"
+          >
+            <div className="flex items-center gap-2 text-slate-600">
+              <span>© 2025 ADmyBRAND. Made with</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
+                transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, repeatDelay: 2 }}
               >
-                <Heart className="w-4 h-4 text-red-500 fill-current" />
+                <Heart className="h-4 w-4 text-red-500 fill-current" />
               </motion.div>
               <span>in San Francisco</span>
-            </motion.div>
-            <motion.div className="flex space-x-8" variants={containerVariants}>
-              {[
-                { href: "/privacy", text: "Privacy Policy" },
-                { href: "/terms", text: "Terms of Service" },
-                { href: "/cookies", text: "Cookie Policy" },
-              ].map((link, index) => (
-                <motion.div key={link.href} variants={itemVariants}>
-                  <motion.div variants={linkVariants} whileHover="hover">
-                    <Link href={link.href} className="text-slate-400 hover:text-white transition-colors relative group">
-                      {link.text}
-                      <motion.div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
-                    </Link>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
+            </div>
+
+            <div className="flex items-center gap-6">
+              <motion.a
+                href="/status"
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 transition-colors"
+              >
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                All systems operational
+              </motion.a>
+
+              <div className="flex items-center gap-4 text-sm text-slate-500">
+                <a href="/privacy" className="hover:text-slate-700 transition-colors">
+                  Privacy
+                </a>
+                <a href="/terms" className="hover:text-slate-700 transition-colors">
+                  Terms
+                </a>
+                <a href="/cookies" className="hover:text-slate-700 transition-colors">
+                  Cookies
+                </a>
+              </div>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
-    </motion.footer>
+    </footer>
   )
 }

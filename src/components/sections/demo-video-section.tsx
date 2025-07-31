@@ -28,7 +28,7 @@ import {
   CheckCircle,
 } from "lucide-react"
 import { useRef, useState, useEffect } from "react"
-import { Button } from "@/components/ui/buttonn"
+import { Button } from "@/components/ui/Button"
 import Image from "next/image"
 
 const demoFeatures = [
@@ -303,7 +303,7 @@ export default function DemoVideoSection() {
                   {/* Video Content */}
                   <div className="relative w-full h-full bg-gradient-to-br from-slate-800 to-slate-900">
                     <Image
-                      src="/placeholder.svg?height=600&width=800&text=Demo+Video+Preview"
+                      src="/img3.jpg"
                       alt="Demo Video"
                       fill
                       className="object-cover"

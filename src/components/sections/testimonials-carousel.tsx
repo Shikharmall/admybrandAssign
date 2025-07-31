@@ -11,12 +11,12 @@ const testimonials = [
     name: "Sarah Chen",
     role: "CTO",
     company: "TechFlow Inc.",
-    avatar: "/placeholder.svg?height=80&width=80&text=SC",
+    avatar: "/img2.jpg",
     rating: 5,
     content:
       "This platform has completely transformed how we build and deploy applications. The AI-powered features save us hours every day, and the performance is incredible. Our team productivity has increased by 300%.",
     highlight: "team productivity has increased by 300%",
-    companyLogo: "/placeholder.svg?height=40&width=120&text=TechFlow",
+    companyLogo: "/hero-demo.png",
     videoTestimonial: true,
   },
   {
@@ -24,12 +24,12 @@ const testimonials = [
     name: "Marcus Rodriguez",
     role: "Lead Developer",
     company: "StartupLab",
-    avatar: "/placeholder.svg?height=80&width=80&text=MR",
+    avatar: "/img2.jpg",
     rating: 5,
     content:
       "The developer experience is phenomenal. From the intuitive interface to the powerful API, everything just works. We migrated our entire infrastructure in just two weeks with zero downtime.",
     highlight: "zero downtime migration",
-    companyLogo: "/placeholder.svg?height=40&width=120&text=StartupLab",
+    companyLogo: "/hero-demo.png",
     videoTestimonial: false,
   },
   {
@@ -37,12 +37,12 @@ const testimonials = [
     name: "Emily Watson",
     role: "Product Manager",
     company: "InnovateCorp",
-    avatar: "/placeholder.svg?height=80&width=80&text=EW",
+    avatar: "/img2.jpg",
     rating: 5,
     content:
       "The analytics and insights we get are game-changing. We can make data-driven decisions faster than ever before. The customer support is also exceptional - they're always there when we need them.",
     highlight: "game-changing analytics",
-    companyLogo: "/placeholder.svg?height=40&width=120&text=InnovateCorp",
+    companyLogo: "/hero-demo.png",
     videoTestimonial: true,
   },
   {
@@ -50,12 +50,12 @@ const testimonials = [
     name: "David Kim",
     role: "Founder & CEO",
     company: "CloudVenture",
-    avatar: "/placeholder.svg?height=80&width=80&text=DK",
+    avatar: "/img2.jpg",
     rating: 5,
     content:
       "As a startup, we needed something that could scale with us. This platform has grown with our company from 5 to 500 employees. The enterprise features are robust yet easy to use.",
     highlight: "scaled from 5 to 500 employees",
-    companyLogo: "/placeholder.svg?height=40&width=120&text=CloudVenture",
+    companyLogo: "/hero-demo.png",
     videoTestimonial: false,
   },
   {
@@ -63,12 +63,12 @@ const testimonials = [
     name: "Lisa Thompson",
     role: "VP of Engineering",
     company: "DataDriven Solutions",
-    avatar: "/placeholder.svg?height=80&width=80&text=LT",
+    avatar: "/img2.jpg",
     rating: 5,
     content:
       "Security was our biggest concern when evaluating platforms. The enterprise-grade security features and compliance certifications gave us complete confidence. Highly recommended!",
     highlight: "enterprise-grade security",
-    companyLogo: "/placeholder.svg?height=40&width=120&text=DataDriven",
+    companyLogo: "/hero-demo.png",
     videoTestimonial: true,
   },
   {
@@ -76,12 +76,12 @@ const testimonials = [
     name: "Alex Johnson",
     role: "Senior Architect",
     company: "ScaleTech",
-    avatar: "/placeholder.svg?height=80&width=80&text=AJ",
+    avatar: "/img2.jpg",
     rating: 5,
     content:
       "The integration capabilities are outstanding. We connected all our existing tools seamlessly. The API documentation is clear, and the SDKs are well-maintained. Perfect for enterprise use.",
     highlight: "outstanding integration capabilities",
-    companyLogo: "/placeholder.svg?height=40&width=120&text=ScaleTech",
+    companyLogo: "/hero-demo.png",
     videoTestimonial: false,
   },
 ]

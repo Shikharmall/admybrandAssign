@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion"
 import { Calculator, Users, Database, Zap, Globe, Shield, Check, Sparkles, ArrowRight } from "lucide-react"
 import { useRef, useState, useEffect } from "react"
-import { Button } from "@/components/ui/buttonn"
+import { Button } from "@/components/ui/Button"
 
 interface PricingTier {
   name: string
