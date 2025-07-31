@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { Calculator, Users, Database, Zap, Globe, Shield, Check, Sparkles, ArrowRight } from "lucide-react"
+import { Calculator, Users, Database, Zap, Globe, Shield, Check, Sparkles, ArrowRight, LucideIcon } from "lucide-react"
 import { useRef, useState, useEffect } from "react"
 import { Button } from "@/components/ui/Button"
 
@@ -10,7 +10,7 @@ interface PricingTier {
   basePrice: number
   color: string
   gradient: string
-  icon: any
+  icon: LucideIcon
   features: string[]
   limits: {
     users: number
@@ -229,11 +229,10 @@ export default function PricingCalculator() {
                       onClick={() => setSelectedTier(index)}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className={`p-4 rounded-2xl border-2 transition-all duration-300 text-left ${
-                        selectedTier === index
+                      className={`p-4 rounded-2xl border-2 transition-all duration-300 text-left ${selectedTier === index
                           ? `border-${tier.color}-300 bg-${tier.color}-50/50`
                           : "border-slate-200 bg-white/50 hover:border-slate-300"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-4">
                         <div
@@ -382,17 +381,15 @@ export default function PricingCalculator() {
                   <div className="inline-flex items-center bg-slate-100 rounded-full p-1">
                     <button
                       onClick={() => setIsYearly(false)}
-                      className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-                        !isYearly ? "bg-white text-slate-900 shadow-md" : "text-slate-600 hover:text-slate-900"
-                      }`}
+                      className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${!isYearly ? "bg-white text-slate-900 shadow-md" : "text-slate-600 hover:text-slate-900"
+                        }`}
                     >
                       Monthly
                     </button>
                     <button
                       onClick={() => setIsYearly(true)}
-                      className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative ${
-                        isYearly ? "bg-white text-slate-900 shadow-md" : "text-slate-600 hover:text-slate-900"
-                      }`}
+                      className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative ${isYearly ? "bg-white text-slate-900 shadow-md" : "text-slate-600 hover:text-slate-900"
+                        }`}
                     >
                       Yearly
                       <span className="absolute -top-2 -right-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs px-2 py-1 rounded-full">
