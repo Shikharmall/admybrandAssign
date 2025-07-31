@@ -14,33 +14,6 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## File Directory
-
-
-src/ (Source code)
- ├── app/                       
- |    ├── pages.tsx (Entry point to the page layout or routing logic)
- ├── components/ (Reusable components)
- |       ├── section/---------------------------------------# Page sections for the landing page
- |       |     ├── hero-section.tsx         
- |       |     ├── features-section.tsx          
- |       |     ├── demo-video-section.tsx           
- |       |     ├── pricing-section.tsx         
- |       |     ├── pricing-calculator.tsx             
- |       |     ├── testimonials-carousel.tsx           
- |       |     ├── blog-resources-section.tsx           
- |       |     ├── faq-section.tsx             
- |       |     ├── footer.tsx 
- |       ├── ui/-------------------------------------------# Generic, atomic UI components
- |            ├── Button.tsx 
- |            ├── progress.tsx 
- |            ├── Slider.tsx 
- └── lib/
-      ├── utils.tsx----------------------------------------# Utility functions (e.g., formatting, helpers)              
-
-
-
-
 
 ### 🤖 AI Usage Report
 
