@@ -17,10 +17,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## File Directory
 
 
-src/ -------------------------------------------------------# Source code
+src/ (Source code)
  ├── app/                       
- |    ├── pages.tsx-----------------------------------------# Entry point to the page layout or routing logic
- ├── components/--------------------------------------------# Reusable components
+ |    ├── pages.tsx (Entry point to the page layout or routing logic)
+ ├── components/ (Reusable components)
  |       ├── section/---------------------------------------# Page sections for the landing page
  |       |     ├── hero-section.tsx         
  |       |     ├── features-section.tsx          
